@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+	--gradient: linear-gradient(89.91deg, #A65DEF 0.06%, #EF5DA8 29.59%, #5D6CEF 61.74%, #5D5FEF 88.64%, #5DBAEF 117.5%);
+	--shadow: 1px 1px 4px 1px rgba(0,0,0,0.1);
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    margin: 0;
+    font-family: "Montserrat";
+    padding: 0;
+    height: 100%;
+    background-color: rgb(40, 44, 43);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex
+}
+.aqua-virtual-console{
+    width: 30%;
+    height: 100%;
+    align-self: flex-end;
+    background-color: #222625;
+    top: 0vh;
+    overflow-y: scroll;
+    display: flex; 
+    position: fixed;
+    right: 0;
+    flex-direction: column
+}
+.aqua-virtual-console::-webkit-scrollbar{
+    opacity: 0.4
+}
+.console-error{
+    background-color: rgba(197, 49, 49,0.6); 
+}
+.console-warn{
+    background-color: rgba(197, 101, 49, 0.6); 
+}
+.console-log{
+    background-color: rgba(225, 225, 225, 0.6); 
+}
+.console-info{
+    background-color: rgba(92, 86, 216, 0.6); 
+}
+.console-target span{
+    font-size: 1.5vh;
+    
+    font-weight: bold;
+}
+.console-log .console-target{
+    color: rgb(204, 193, 193);
+}
+.console-warn .console-target{
+    color: rgb(202, 105, 69);
+}
+.console-error .console-target{
+    color: rgb(208, 56, 51);
+}
+.console-info .console-target{
+    color: rgb(99, 103, 221);
+}
+.aqua-virtual-console h1{
+    margin: 0.5vh;
+    padding: 0;
+    font-size: 2vh;
+    color: #44c989;
+
+}
+.blocks{
+    display: flex;
+    flex-direction: column;
+}
+.aqua-virtual-console-i{
+    position: relative;
+    font-family: 'Montserrat';
+    padding: 0.5vh;
+    display: flex;
+}
+.console-date{
+    position: absolute;
+    right: 1vh;
+    color: #fff;
+    
+}
+::-webkit-scrollbar {
+    width: 9px;
+    height: 6px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #44c989;
+    height: 10px;
+}
+.wrapper{
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(24,27,26,0.9164040616246498) 60%, rgba(40,44,43,0.41) 100%);
+    padding: 1vh;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 2vw;
+    align-items: center;
+
+}
+.logo{
+    display: flex;
+    align-items: center
+}
+.logo img{
+    height: 30vh;
+
+}
+.download-btn{
+    color: #fff;
+    position: absolute;
+    bottom: 2vh;
+    left: 43.3vw;
+    
+    text-decoration: none;
+    background: linear-gradient(141.04deg, #5EF0AA 3.6%, #5E85EA 97.77%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: #fff;
+    padding: 1vh 3vh;
+    border-radius: 10px;
+    transition: all 0.3s linear 0s;
+
+}
+.download-btn:hover{
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #fff;
+}
+.box-title{
+    font-weight: bold;
+}
+.lib-name{
+    font-weight: bold;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5vh;
+}
+.lib-info{
+    display: flex;
+    font-size: 4vh;
+    flex-direction: column;
+}
+.lib-minidesc{
+    font-size: 3vh;
+    width: 14vw;
+}
+.lib-version{
+    font-size: 3.5vh;
+    font-style: italic;
+}
+.block{
+    flex: 9;
+    color: #fff;
+    padding: 2vh;
+}
+.block p {
+    color: #ccc;
+    width: 666px;
+}
+.aqua-js-btn{
+    text-decoration: none;
+    color: #44c989;
+    padding: 1vh 2vh;
+    transition: 0.3s linear 0s;
+    margin-top: 2vh;
+    cursor: pointer;
+
+    border: 1px solid #44c989;
+}
+.aqua-js-btn:hover{
+    background-color: rgb(68, 201, 137,0.5);
+}
+.run-icon{
+    background-image: url("images/run.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 24px;
+    display: inline-block;
+    position: relative;
+    top: 0.6vh;
+    left: 1vh;
+    z-index: 2;
+    height: 24px;
+}
+.tooltip{
+    height: 3vh;
+    padding: 0vh 3vw;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #348c61;
+    position: fixed;
+    white-space: nowrap;
+}
+.root{
+}
+
+.tooltip-in-text{
+    margin-top: 1vh;
+    background-color: #222625;
+    display: inline-block;
+    height: 1vh;
+    white-space: nowrap;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    color: #61e6a6;
+}

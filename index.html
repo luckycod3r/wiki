@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaJS</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/code/code.css">
+</head>
+<body onload="hljs.highlightAll();">
+    <div class="root"></div>
+    <!-- <div class="wrapper">
+        <div class="logo">
+            
+            <img src="assets/images/logo.svg" draggable="false">
+        </div>
+        <a href="https://aquaclouds.ru/cloud/gqSlie4/AquaJS.js" class="download-btn" download="">Скачать последнюю версию</a>
+    </div> -->
+    <div class="container">
+        <div class="blocks">
+
+
+            <div class="block" id="main_playground">
+                <h1>Главная функция</h1>
+                <p>Почти все действия с библиотекой выполняются путём вызова главной функции. <span class="tooltip-in-text">A_(&nbsp;&nbsp;)</span>
+                </p>
+                <p>Через главную функцию можно легко получать элементы</p>
+                <pre><code class="hljs lang-js">
+console.log(A_(".aqua-virtual-console"))
+                </code></pre>
+                <a jsl onClick="getElement()" class="aqua-js-btn" tooltip="true" tooltip-text="A_(selector)">Выполнить</i></a>
+            </div>    
+
+            <div class="block">
+                <h1>Кастомные классы</h1>
+                <p>Позволяет создавать свои классы на стороне JS без использования CSS-файла
+                </p>
+                <pre><code class="hljs lang-js"> 
+let myClass = {
+    backgroundColor: "#f00",
+    color: "#fff"
+}
+let result = new Class(myClass);
+console.log(result.name) // выведет название класса
+new Listener(".unsetClass","click",(event)=>{
+    result.unset(A_(".genericClass"));
+});
+result.applyTo(A_(".genericClass"));
+                </code></pre>
+                <a jsl onClick="p.start()" class="genericClass aqua-js-btn" tooltip="true" tooltip-text="Создаст кастомный класс">Создать</a>
+                <a jsl class="unsetClass aqua-js-btn" tooltip="true" tooltip-text="Убирает класс">Убрать</a>
+            </div>
+            <div class="block" id="event_playground">
+                <h1>Слушатели событий</h1>
+                <p>Сокращённая форма добавление EventListener на элемент
+                Добавляется в таком формате <span class="tooltip-in-text">new Listener(elem,event,(event)=>{todo})</span>
+                </p>
+
+                <pre><code class="hljs lang-js">
+let elem = A_(".eventListener");
+new Listener(elem,"click",(event)=>{
+    console.log("event listened");
+})
+                </code></pre>
+                <a jsl onClick="events.start();" class="eventListener aqua-js-btn">Run!<i class="run-icon"></i></a>
+            </div>
+            <div class="block" id="dialogs_playground">
+                <h1>Диалоги</h1>
+                <p>Очень удобная возможность библиотеки. При вызове создаёт диалоговое окно с вариантом ответа Да/Нет <span class="tooltip-in-text">new Dialog(object)</span>
+                </p>
+
+                <pre><code class="hljs lang-js">
+let elem = A_(".dialogRunner"); // Ищем кнопку
+// Добавляем слушатель событий на событие - клик
+new Listener(elem,"click",(event)=>{
+    // Конфигурируем диалог
+       let dialog = {
+           title: "Заголовок",
+           message: "Сообщение",
+           onYes: function(){
+               alert(`Вы нажали ДА`)
+           },
+           onDecline : function(){
+               alert(`Вы нажали НЕТ`)
+           }
+       }
+       // создаём объект диалога
+       let dialogObject = new Dialog(dialog)
+       dialogObject.open() // открываем диалоговое окно
+}) 
+                </code></pre>
+                <a jsl onClick="dialogs.start();" class="dialogRunner aqua-js-btn run-btn">Run!<i class="run-icon"></i></a>
+            </div>            
+        </div>
+
+        <div class="aqua-virtual-console">
+            <h1>Console: </h1>
+        </div>
+    </div>
+    <!-- <footer>
+        <a target="_blank" href="https://github.com/luckycod3r/AquaJS">
+            <img src="assets/images/github.svg" height="200" alt="">
+        </a>
+    </footer> -->
+    <script src="assets/code/highlight.min.js"></script>
+    <script src="assets/AquaJS.min.js"></script>
+    <script src="assets/VirtualConsole.js"></script>
+    <script src="assets/main.js"></script>
+</body>
+</html>
