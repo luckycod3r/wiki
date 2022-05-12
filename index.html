@@ -65,6 +65,21 @@ new Listener(elem,"click",(event)=>{
                 </code></pre>
                 <a jsl onClick="events.start();" class="eventListener aqua-js-btn">Run!<i class="run-icon"></i></a>
             </div>
+            <div class="block" id="watch_playground">
+                <h1>Watch</h1>
+                <p>Обработчик изменений переменной. Т.е вешаем слушатель изменений и выполняем код, если переменная была изменена<span class="tooltip-in-text">new Watch(var, defaultVal, (editedVar, varName)=>{todo})</span>
+                </p>
+
+                <pre><code class="hljs lang-js">
+new Watch("testVar",0,(edited,name)=>{
+    console.log(`Variable was edited: ${name} = ${edited}`);
+})
+new Listener(".watchRunner","click",(event)=>{
+    testVar++;
+})                    
+                </code></pre>
+                <a jsl onClick="watchs.start();" class="dialogRunner aqua-js-btn run-btn">Run!<i class="run-icon"></i></a>
+            </div>            
             <div class="block" id="dialogs_playground">
                 <h1>Диалоги</h1>
                 <p>Очень удобная возможность библиотеки. При вызове создаёт диалоговое окно с вариантом ответа Да/Нет <span class="tooltip-in-text">new Dialog(object)</span>
@@ -103,8 +118,9 @@ new Listener(elem,"click",(event)=>{
             <img src="assets/images/github.svg" height="200" alt="">
         </a>
     </footer> -->
+
     <script src="assets/code/highlight.min.js"></script>
-    <script src="assets/AquaJS.min.js"></script>
+    <script src="build/AquaJS.min.js"></script>
     <script src="assets/VirtualConsole.js"></script>
     <script src="assets/main.js"></script>
 </body>

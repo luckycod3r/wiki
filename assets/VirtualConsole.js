@@ -1,4 +1,6 @@
-var console = {
+VirtualConsoleEnabled = true;
+if(VirtualConsoleEnabled){
+  var console = {
     __on : {},
     addEventListener : function (name, callback) {
       this.__on[name] = (this.__on[name] || []).concat(callback);
@@ -73,3 +75,5 @@ function VirtualConsole(value,type){
 </div>`
   document.querySelector(".aqua-virtual-console").innerHTML += res
 }
+}
+

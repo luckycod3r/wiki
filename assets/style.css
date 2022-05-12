@@ -178,6 +178,7 @@ body{
     text-decoration: none;
     color: #44c989;
     padding: 1vh 2vh;
+    user-select: none;
     transition: 0.3s linear 0s;
     margin-top: 2vh;
     cursor: pointer;

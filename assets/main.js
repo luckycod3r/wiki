@@ -113,9 +113,24 @@ document.querySelectorAll(`[tooltip="true"]`).forEach(function(i){
     })
 })
 
+// TODO : Заглушки для кастомных элементов в виде CustomProperty_html | CustomProperty_attr_attrName
 
-let test = new Playground(()=>{
-    function small(){
-        alert("small");
-    }
+
+function d(ds){
+    alert(ds);
+}
+
+
+let watchs = new Playground(()=>{
+
+    new Watch("testVar",0,(ver,varName)=>{
+        console.log(`Variable was edited: ${varName} = ${ver}`);
+    })
+    A_("#watch_playground a").remove();
+    A_("#watch_playground").html(`<a jsl class="watchRunner aqua-js-btn" tooltip="true" tooltip-text="Обновит переменную testVar">Изменить переменную</a>`,"+")
+    new Listener(".watchRunner","click",(event)=>{
+        testVar++;
+    })
 })
+
+
